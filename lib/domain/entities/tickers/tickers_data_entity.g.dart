@@ -21,9 +21,9 @@ _$_TickersDataEntity _$_$_TickersDataEntityFromJson(Map<String, dynamic> json) {
     marketCapUsd: json['market_cap_usd'] as String,
     volume24: (json['volume24'] as num).toDouble(),
     volume24a: (json['volume24a'] as num).toDouble(),
-    csupply: json['csupply'] as String,
-    tsupply: json['tsupply'] as String,
-    msupply: json['msupply'] as String,
+    csupply: json['csupply'] as String? ?? '',
+    tsupply: json['tsupply'] as String? ?? '',
+    msupply: json['msupply'] as String? ?? '',
   );
 }
 

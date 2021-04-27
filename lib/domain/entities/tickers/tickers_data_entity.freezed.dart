@@ -34,9 +34,9 @@ class _$TickersDataEntityTearOff {
       @JsonKey(name: 'market_cap_usd') required String marketCapUsd,
       required double volume24,
       required double volume24a,
-      required String csupply,
-      required String tsupply,
-      required String msupply}) {
+      String? csupply = '',
+      String? tsupply = '',
+      String? msupply = ''}) {
     return _TickersDataEntity(
       id: id,
       symbol: symbol,
@@ -86,9 +86,9 @@ mixin _$TickersDataEntity {
   String get marketCapUsd => throw _privateConstructorUsedError;
   double get volume24 => throw _privateConstructorUsedError;
   double get volume24a => throw _privateConstructorUsedError;
-  String get csupply => throw _privateConstructorUsedError;
-  String get tsupply => throw _privateConstructorUsedError;
-  String get msupply => throw _privateConstructorUsedError;
+  String? get csupply => throw _privateConstructorUsedError;
+  String? get tsupply => throw _privateConstructorUsedError;
+  String? get msupply => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -115,9 +115,9 @@ abstract class $TickersDataEntityCopyWith<$Res> {
       @JsonKey(name: 'market_cap_usd') String marketCapUsd,
       double volume24,
       double volume24a,
-      String csupply,
-      String tsupply,
-      String msupply});
+      String? csupply,
+      String? tsupply,
+      String? msupply});
 }
 
 /// @nodoc
@@ -204,15 +204,15 @@ class _$TickersDataEntityCopyWithImpl<$Res>
       csupply: csupply == freezed
           ? _value.csupply
           : csupply // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tsupply: tsupply == freezed
           ? _value.tsupply
           : tsupply // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       msupply: msupply == freezed
           ? _value.msupply
           : msupply // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -238,9 +238,9 @@ abstract class _$TickersDataEntityCopyWith<$Res>
       @JsonKey(name: 'market_cap_usd') String marketCapUsd,
       double volume24,
       double volume24a,
-      String csupply,
-      String tsupply,
-      String msupply});
+      String? csupply,
+      String? tsupply,
+      String? msupply});
 }
 
 /// @nodoc
@@ -329,15 +329,15 @@ class __$TickersDataEntityCopyWithImpl<$Res>
       csupply: csupply == freezed
           ? _value.csupply
           : csupply // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tsupply: tsupply == freezed
           ? _value.tsupply
           : tsupply // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       msupply: msupply == freezed
           ? _value.msupply
           : msupply // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -359,9 +359,9 @@ class _$_TickersDataEntity implements _TickersDataEntity {
       @JsonKey(name: 'market_cap_usd') required this.marketCapUsd,
       required this.volume24,
       required this.volume24a,
-      required this.csupply,
-      required this.tsupply,
-      required this.msupply});
+      this.csupply = '',
+      this.tsupply = '',
+      this.msupply = ''});
 
   factory _$_TickersDataEntity.fromJson(Map<String, dynamic> json) =>
       _$_$_TickersDataEntityFromJson(json);
@@ -398,12 +398,15 @@ class _$_TickersDataEntity implements _TickersDataEntity {
   final double volume24;
   @override
   final double volume24a;
+  @JsonKey(defaultValue: '')
   @override
-  final String csupply;
+  final String? csupply;
+  @JsonKey(defaultValue: '')
   @override
-  final String tsupply;
+  final String? tsupply;
+  @JsonKey(defaultValue: '')
   @override
-  final String msupply;
+  final String? msupply;
 
   @override
   String toString() {
@@ -504,9 +507,9 @@ abstract class _TickersDataEntity implements TickersDataEntity {
       @JsonKey(name: 'market_cap_usd') required String marketCapUsd,
       required double volume24,
       required double volume24a,
-      required String csupply,
-      required String tsupply,
-      required String msupply}) = _$_TickersDataEntity;
+      String? csupply,
+      String? tsupply,
+      String? msupply}) = _$_TickersDataEntity;
 
   factory _TickersDataEntity.fromJson(Map<String, dynamic> json) =
       _$_TickersDataEntity.fromJson;
@@ -544,11 +547,11 @@ abstract class _TickersDataEntity implements TickersDataEntity {
   @override
   double get volume24a => throw _privateConstructorUsedError;
   @override
-  String get csupply => throw _privateConstructorUsedError;
+  String? get csupply => throw _privateConstructorUsedError;
   @override
-  String get tsupply => throw _privateConstructorUsedError;
+  String? get tsupply => throw _privateConstructorUsedError;
   @override
-  String get msupply => throw _privateConstructorUsedError;
+  String? get msupply => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TickersDataEntityCopyWith<_TickersDataEntity> get copyWith =>

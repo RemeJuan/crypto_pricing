@@ -20,9 +20,9 @@ class TickersDataEntity with _$TickersDataEntity {
     @JsonKey(name: 'market_cap_usd') required String marketCapUsd,
     required double volume24,
     required double volume24a,
-    required String csupply,
-    required String tsupply,
-    required String msupply,
+    @Default('') String? csupply,
+    @Default('') String? tsupply,
+    @Default('') String? msupply,
   }) = _TickersDataEntity;
 
   factory TickersDataEntity.fromJson(Map<String, dynamic> json) =>

@@ -34,4 +34,4 @@ linter:
     unnecessary_this: true
     prefer_collection_literals: true
     null_check_always_fails: false
-    prefer_single_quotes: false
+    prefer_single_quotes: true

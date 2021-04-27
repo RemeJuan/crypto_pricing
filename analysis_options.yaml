@@ -1,0 +1,37 @@
+include: package:pedantic/analysis_options.yaml
+analyzer:
+  errors:
+    prefer_collection_literals: warning
+    unused_element: error
+    unused_import: error
+    unused_local_variable: error
+    dead_code: error
+    missing_required_param: error
+  exclude:
+    - lib/**.freezed.dart
+    - lib/**.g.dart
+    - lib/**.gr.dart
+    - lib/**.mocks.dart
+    - test/**.mocks.dart
+    - test_driver/**/*.*
+    - test_integration/**/*.*
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
+linter:
+  rules:
+    avoid_print: true
+    always_put_required_named_parameters_first: true
+    sort_child_properties_last: true
+    join_return_with_assignment: true
+    prefer_const_constructors: true
+    prefer_final_in_for_each: true
+    directives_ordering: true
+    avoid_relative_lib_imports: true
+    prefer_final_locals: true
+    omit_local_variable_types: true
+    unnecessary_this: true
+    prefer_collection_literals: true
+    null_check_always_fails: false
+    prefer_single_quotes: false

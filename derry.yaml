@@ -1,0 +1,4 @@
+genb: flutter pub run build_runner build --delete-conflicting-outputs
+genw: flutter pub run build_runner watch --delete-conflicting-outputs
+test: flutter test test
+cov: ./coverage_test_report.sh

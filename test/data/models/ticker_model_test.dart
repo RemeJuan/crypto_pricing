@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:crypto_pricing/domain/entities/tickers/coin_lore_tickers.dart';
+import 'package:crypto_pricing/domain/entities/tickers/tickers_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../fixtures/tickers/fixture_tickers_entity.dart';
@@ -13,15 +13,15 @@ void main() {
 
   test('should be a subclass of [DigestEntity]', () async {
     //assert
-    expect(fixtureCoinLoreTickers, isA<CoinLoreTickersEntity>());
+    expect(fixtureTickers, isA<TickersEntity>());
   });
 
   group('fromJson', () {
     test('should return a valid model', () async {
       //act
-      final result = CoinLoreTickersEntity.fromJson(decodedJson);
+      final result = TickersEntity.fromJson(decodedJson);
       //assert
-      expect(result, fixtureCoinLoreTickers);
+      expect(result, fixtureTickers);
     });
   });
 
@@ -29,11 +29,11 @@ void main() {
     test('should return a jsonMap with the correct data', () async {
       //act
       final result = {
-        "data": <Map<String, dynamic>>[
+        'data': <Map<String, dynamic>>[
           fixtureBtcData.toJson(),
           fixtureEthData.toJson(),
         ],
-        "info": fixtureInfoData.toJson(),
+        'info': fixtureInfoData.toJson(),
       };
       //assert
       expect(result, decodedJson);

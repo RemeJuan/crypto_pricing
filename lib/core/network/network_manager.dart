@@ -40,7 +40,7 @@ class NetworkManager {
       foundation.debugPrint('$url, ${response.statusCode}');
 
       if (response.statusCode != 200) {
-        throw 'Unable to download asset: ${response.statusCode} ${file.path}';
+        throw 'Unable to download asset: ${response.statusCode}';
       }
 
       await file.writeAsBytes(response.bodyBytes);

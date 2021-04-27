@@ -128,7 +128,7 @@ void main() {
         //assert
         expect(
           () => call(mockUrl, file),
-          throwsA('Unable to download asset: 404 $path/files/mock_file'),
+          throwsA('Unable to download asset: 404'),
         );
       });
     });

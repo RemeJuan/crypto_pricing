@@ -6,12 +6,10 @@ import 'network_info.dart';
 
 class NetworkManager {
   final http.Client client;
-  final Map<String, String> headers;
   final NetworkInfo networkInfo;
 
   NetworkManager({
     required this.client,
-    required this.headers,
     required this.networkInfo,
   });
 
@@ -28,6 +26,28 @@ class NetworkManager {
       return response;
     } else {
       throw Exception();
+    }
+  }
+
+  Future<http.Response> apiGetFile(String url, File file) async {
+    final connected = await networkInfo.isConnected;
+
+    if (!connected) throw const SocketException('Offline');
+
+    try {
+      final response = await client.get(Uri.parse(url));
+
+      foundation.debugPrint('$url, ${response.statusCode}');
+
+      if (response.statusCode != 200) {
+        throw 'Unable to download asset: ${response.statusCode} ${file.path}';
+      }
+
+      await file.writeAsBytes(response.bodyBytes);
+
+      return response;
+    } catch (e) {
+      rethrow;
     }
   }
 }

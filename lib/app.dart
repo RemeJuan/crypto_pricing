@@ -1,4 +1,5 @@
 import 'package:crypto_pricing/domain/entities/tickers/tickers_data_entity.dart';
+import 'package:crypto_pricing/shared/widgets/offline_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -46,10 +47,9 @@ class CryptoApp extends HookWidget {
   Widget _cryptoIcon(BuildContext context, String symbol) {
     final url = 'https://cryptoicons.org/api/icon/${symbol.toLowerCase()}/25';
 
-    // return OfflineImage(
-    //   fileName: symbol.toLowerCase(),
-    //   url: url,
-    // );
-    return const SizedBox.shrink();
+    return OfflineImage(
+      fileName: symbol.toLowerCase(),
+      url: url,
+    );
   }
 }

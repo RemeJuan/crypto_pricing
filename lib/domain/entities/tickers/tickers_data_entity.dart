@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'coin_lore_tickers_data.freezed.dart';
+part 'tickers_data_entity.freezed.dart';
 
-part 'coin_lore_tickers_data.g.dart';
+part 'tickers_data_entity.g.dart';
 
 @freezed
-class CoinLoreTickersDataEntity with _$CoinLoreTickersDataEntity {
-  const factory CoinLoreTickersDataEntity({
+class TickersDataEntity with _$TickersDataEntity {
+  const factory TickersDataEntity({
     required String id,
     required String symbol,
     required String name,
@@ -23,8 +23,8 @@ class CoinLoreTickersDataEntity with _$CoinLoreTickersDataEntity {
     required String csupply,
     required String tsupply,
     required String msupply,
-  }) = _CoinLoreTickersDataEntity;
+  }) = _TickersDataEntity;
 
-  factory CoinLoreTickersDataEntity.fromJson(Map<String, dynamic> json) =>
-      _$CoinLoreTickersDataEntityFromJson(json);
+  factory TickersDataEntity.fromJson(Map<String, dynamic> json) =>
+      _$TickersDataEntityFromJson(json);
 }

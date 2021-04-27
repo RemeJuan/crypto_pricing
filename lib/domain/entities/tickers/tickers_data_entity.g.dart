@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'coin_lore_tickers_data.dart';
+part of 'tickers_data_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CoinLoreTickersDataEntity _$_$_CoinLoreTickersDataEntityFromJson(
-    Map<String, dynamic> json) {
-  return _$_CoinLoreTickersDataEntity(
+_$_TickersDataEntity _$_$_TickersDataEntityFromJson(Map<String, dynamic> json) {
+  return _$_TickersDataEntity(
     id: json['id'] as String,
     symbol: json['symbol'] as String,
     name: json['name'] as String,
@@ -28,8 +27,8 @@ _$_CoinLoreTickersDataEntity _$_$_CoinLoreTickersDataEntityFromJson(
   );
 }
 
-Map<String, dynamic> _$_$_CoinLoreTickersDataEntityToJson(
-        _$_CoinLoreTickersDataEntity instance) =>
+Map<String, dynamic> _$_$_TickersDataEntityToJson(
+        _$_TickersDataEntity instance) =>
     <String, dynamic>{
       'id': instance.id,
       'symbol': instance.symbol,

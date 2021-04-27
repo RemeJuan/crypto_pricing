@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'coin_lore_tickers_data.dart';
+part of 'tickers_data_entity.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,16 +12,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CoinLoreTickersDataEntity _$CoinLoreTickersDataEntityFromJson(
-    Map<String, dynamic> json) {
-  return _CoinLoreTickersDataEntity.fromJson(json);
+TickersDataEntity _$TickersDataEntityFromJson(Map<String, dynamic> json) {
+  return _TickersDataEntity.fromJson(json);
 }
 
 /// @nodoc
-class _$CoinLoreTickersDataEntityTearOff {
-  const _$CoinLoreTickersDataEntityTearOff();
+class _$TickersDataEntityTearOff {
+  const _$TickersDataEntityTearOff();
 
-  _CoinLoreTickersDataEntity call(
+  _TickersDataEntity call(
       {required String id,
       required String symbol,
       required String name,
@@ -38,7 +37,7 @@ class _$CoinLoreTickersDataEntityTearOff {
       required String csupply,
       required String tsupply,
       required String msupply}) {
-    return _CoinLoreTickersDataEntity(
+    return _TickersDataEntity(
       id: id,
       symbol: symbol,
       name: name,
@@ -58,16 +57,16 @@ class _$CoinLoreTickersDataEntityTearOff {
     );
   }
 
-  CoinLoreTickersDataEntity fromJson(Map<String, Object> json) {
-    return CoinLoreTickersDataEntity.fromJson(json);
+  TickersDataEntity fromJson(Map<String, Object> json) {
+    return TickersDataEntity.fromJson(json);
   }
 }
 
 /// @nodoc
-const $CoinLoreTickersDataEntity = _$CoinLoreTickersDataEntityTearOff();
+const $TickersDataEntity = _$TickersDataEntityTearOff();
 
 /// @nodoc
-mixin _$CoinLoreTickersDataEntity {
+mixin _$TickersDataEntity {
   String get id => throw _privateConstructorUsedError;
   String get symbol => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -93,15 +92,15 @@ mixin _$CoinLoreTickersDataEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CoinLoreTickersDataEntityCopyWith<CoinLoreTickersDataEntity> get copyWith =>
+  $TickersDataEntityCopyWith<TickersDataEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CoinLoreTickersDataEntityCopyWith<$Res> {
-  factory $CoinLoreTickersDataEntityCopyWith(CoinLoreTickersDataEntity value,
-          $Res Function(CoinLoreTickersDataEntity) then) =
-      _$CoinLoreTickersDataEntityCopyWithImpl<$Res>;
+abstract class $TickersDataEntityCopyWith<$Res> {
+  factory $TickersDataEntityCopyWith(
+          TickersDataEntity value, $Res Function(TickersDataEntity) then) =
+      _$TickersDataEntityCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String symbol,
@@ -122,13 +121,13 @@ abstract class $CoinLoreTickersDataEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CoinLoreTickersDataEntityCopyWithImpl<$Res>
-    implements $CoinLoreTickersDataEntityCopyWith<$Res> {
-  _$CoinLoreTickersDataEntityCopyWithImpl(this._value, this._then);
+class _$TickersDataEntityCopyWithImpl<$Res>
+    implements $TickersDataEntityCopyWith<$Res> {
+  _$TickersDataEntityCopyWithImpl(this._value, this._then);
 
-  final CoinLoreTickersDataEntity _value;
+  final TickersDataEntity _value;
   // ignore: unused_field
-  final $Res Function(CoinLoreTickersDataEntity) _then;
+  final $Res Function(TickersDataEntity) _then;
 
   @override
   $Res call({
@@ -219,11 +218,11 @@ class _$CoinLoreTickersDataEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CoinLoreTickersDataEntityCopyWith<$Res>
-    implements $CoinLoreTickersDataEntityCopyWith<$Res> {
-  factory _$CoinLoreTickersDataEntityCopyWith(_CoinLoreTickersDataEntity value,
-          $Res Function(_CoinLoreTickersDataEntity) then) =
-      __$CoinLoreTickersDataEntityCopyWithImpl<$Res>;
+abstract class _$TickersDataEntityCopyWith<$Res>
+    implements $TickersDataEntityCopyWith<$Res> {
+  factory _$TickersDataEntityCopyWith(
+          _TickersDataEntity value, $Res Function(_TickersDataEntity) then) =
+      __$TickersDataEntityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -245,16 +244,15 @@ abstract class _$CoinLoreTickersDataEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CoinLoreTickersDataEntityCopyWithImpl<$Res>
-    extends _$CoinLoreTickersDataEntityCopyWithImpl<$Res>
-    implements _$CoinLoreTickersDataEntityCopyWith<$Res> {
-  __$CoinLoreTickersDataEntityCopyWithImpl(_CoinLoreTickersDataEntity _value,
-      $Res Function(_CoinLoreTickersDataEntity) _then)
-      : super(_value, (v) => _then(v as _CoinLoreTickersDataEntity));
+class __$TickersDataEntityCopyWithImpl<$Res>
+    extends _$TickersDataEntityCopyWithImpl<$Res>
+    implements _$TickersDataEntityCopyWith<$Res> {
+  __$TickersDataEntityCopyWithImpl(
+      _TickersDataEntity _value, $Res Function(_TickersDataEntity) _then)
+      : super(_value, (v) => _then(v as _TickersDataEntity));
 
   @override
-  _CoinLoreTickersDataEntity get _value =>
-      super._value as _CoinLoreTickersDataEntity;
+  _TickersDataEntity get _value => super._value as _TickersDataEntity;
 
   @override
   $Res call({
@@ -275,7 +273,7 @@ class __$CoinLoreTickersDataEntityCopyWithImpl<$Res>
     Object? tsupply = freezed,
     Object? msupply = freezed,
   }) {
-    return _then(_CoinLoreTickersDataEntity(
+    return _then(_TickersDataEntity(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -346,8 +344,8 @@ class __$CoinLoreTickersDataEntityCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CoinLoreTickersDataEntity implements _CoinLoreTickersDataEntity {
-  const _$_CoinLoreTickersDataEntity(
+class _$_TickersDataEntity implements _TickersDataEntity {
+  const _$_TickersDataEntity(
       {required this.id,
       required this.symbol,
       required this.name,
@@ -365,8 +363,8 @@ class _$_CoinLoreTickersDataEntity implements _CoinLoreTickersDataEntity {
       required this.tsupply,
       required this.msupply});
 
-  factory _$_CoinLoreTickersDataEntity.fromJson(Map<String, dynamic> json) =>
-      _$_$_CoinLoreTickersDataEntityFromJson(json);
+  factory _$_TickersDataEntity.fromJson(Map<String, dynamic> json) =>
+      _$_$_TickersDataEntityFromJson(json);
 
   @override
   final String id;
@@ -409,13 +407,13 @@ class _$_CoinLoreTickersDataEntity implements _CoinLoreTickersDataEntity {
 
   @override
   String toString() {
-    return 'CoinLoreTickersDataEntity(id: $id, symbol: $symbol, name: $name, nameid: $nameid, rank: $rank, priceUsd: $priceUsd, percentChange24h: $percentChange24h, percentChange1h: $percentChange1h, percentChange7d: $percentChange7d, priceBtc: $priceBtc, marketCapUsd: $marketCapUsd, volume24: $volume24, volume24a: $volume24a, csupply: $csupply, tsupply: $tsupply, msupply: $msupply)';
+    return 'TickersDataEntity(id: $id, symbol: $symbol, name: $name, nameid: $nameid, rank: $rank, priceUsd: $priceUsd, percentChange24h: $percentChange24h, percentChange1h: $percentChange1h, percentChange7d: $percentChange7d, priceBtc: $priceBtc, marketCapUsd: $marketCapUsd, volume24: $volume24, volume24a: $volume24a, csupply: $csupply, tsupply: $tsupply, msupply: $msupply)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoinLoreTickersDataEntity &&
+        (other is _TickersDataEntity &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.symbol, symbol) ||
@@ -482,19 +480,17 @@ class _$_CoinLoreTickersDataEntity implements _CoinLoreTickersDataEntity {
 
   @JsonKey(ignore: true)
   @override
-  _$CoinLoreTickersDataEntityCopyWith<_CoinLoreTickersDataEntity>
-      get copyWith =>
-          __$CoinLoreTickersDataEntityCopyWithImpl<_CoinLoreTickersDataEntity>(
-              this, _$identity);
+  _$TickersDataEntityCopyWith<_TickersDataEntity> get copyWith =>
+      __$TickersDataEntityCopyWithImpl<_TickersDataEntity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CoinLoreTickersDataEntityToJson(this);
+    return _$_$_TickersDataEntityToJson(this);
   }
 }
 
-abstract class _CoinLoreTickersDataEntity implements CoinLoreTickersDataEntity {
-  const factory _CoinLoreTickersDataEntity(
+abstract class _TickersDataEntity implements TickersDataEntity {
+  const factory _TickersDataEntity(
       {required String id,
       required String symbol,
       required String name,
@@ -510,10 +506,10 @@ abstract class _CoinLoreTickersDataEntity implements CoinLoreTickersDataEntity {
       required double volume24a,
       required String csupply,
       required String tsupply,
-      required String msupply}) = _$_CoinLoreTickersDataEntity;
+      required String msupply}) = _$_TickersDataEntity;
 
-  factory _CoinLoreTickersDataEntity.fromJson(Map<String, dynamic> json) =
-      _$_CoinLoreTickersDataEntity.fromJson;
+  factory _TickersDataEntity.fromJson(Map<String, dynamic> json) =
+      _$_TickersDataEntity.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -555,6 +551,6 @@ abstract class _CoinLoreTickersDataEntity implements CoinLoreTickersDataEntity {
   String get msupply => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CoinLoreTickersDataEntityCopyWith<_CoinLoreTickersDataEntity>
-      get copyWith => throw _privateConstructorUsedError;
+  _$TickersDataEntityCopyWith<_TickersDataEntity> get copyWith =>
+      throw _privateConstructorUsedError;
 }

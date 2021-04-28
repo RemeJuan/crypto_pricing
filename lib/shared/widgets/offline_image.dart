@@ -38,8 +38,14 @@ class OfflineImage extends HookWidget {
           height: 25,
           width: 25,
           child: hasLocalAsset.value
-              ? Image.file(File(assetPath))
-              : Image.network(url),
+              ? Image.file(
+                  File(assetPath),
+                  key: const Key('IMAGE_FILE'),
+                )
+              : Image.network(
+                  url,
+                  key: const Key('IMAGE_NETWORK'),
+                ),
         );
       },
     );
@@ -48,7 +54,7 @@ class OfflineImage extends HookWidget {
   Future<void> _hasToDownloadAssets(ValueNotifier<bool> hasLocalAsset) async {
     final _dir = await getApplicationDocumentsDirectory();
 
-    final fn = '$_dir/icons/$fileName.png';
+    final fn = '${_dir.path}/icons/$fileName.png';
 
     final file = File(fn);
     final exists = file.existsSync();
@@ -62,7 +68,7 @@ class OfflineImage extends HookWidget {
 
     final _dir = await getApplicationDocumentsDirectory();
 
-    final file = File('$_dir/icons/$fileName.png');
+    final file = File('${_dir.path}/icons/$fileName.png');
 
     final networkManager = getIt<NetworkManager>();
 

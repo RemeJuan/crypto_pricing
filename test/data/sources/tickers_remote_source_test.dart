@@ -1,27 +1,27 @@
-import 'package:crypto_pricing/data/sources/tickers/tickers_remote_source.dart';
+import 'package:crypto_pricing/data/sources/markets/markets_remote_source.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
 
 import '../../class_mocks/network_mocks.dart';
-import '../../fixtures/tickers/fixture_tickers_entity.dart';
+import '../../fixtures/markets/fixture_market_entity.dart';
 import '../../test_helpers.dart';
 
 void main() {
-  final data = TestHelpers.fixture('tickers/get_tickers.json');
+  final data = TestHelpers.fixture('markets/get_markets.json');
 
-  late TickersRemoteSource mockTickersRemoteSource;
+  late MarketsRemoteSource mockTickersRemoteSource;
   late MockNetworkManager mockNetworkManager;
 
   setUp(() {
     mockNetworkManager = MockNetworkManager();
-    mockTickersRemoteSource = TickersRemoteSourceImpl(
+    mockTickersRemoteSource = MarketsRemoteSourceImpl(
       networkManager: mockNetworkManager,
     );
   });
 
-  group('getTickers', () {
-    const mockUrl = 'https://api.coinlore.net/api/tickers';
+  group('getMarkets', () {
+    const mockUrl = 'https://api.coinlore.net/api/tickers?limit=20';
     setUp(() {
       when(mockNetworkManager.apiGet(any)).thenAnswer(
         (_) async => http.Response(data, 200),
@@ -32,7 +32,7 @@ void main() {
         'should perform a GET request on a URL with digest being the endpoint and with correct headers',
         () async {
       //act
-      await mockTickersRemoteSource.getTickers();
+      await mockTickersRemoteSource.getMarkets();
       //assert
       verify(mockNetworkManager.apiGet(mockUrl));
     });
@@ -40,9 +40,9 @@ void main() {
     test('should return [TickersEntity] when the response code is 200',
         () async {
       //act
-      final response = await mockTickersRemoteSource.getTickers();
+      final response = await mockTickersRemoteSource.getMarkets();
       //assert
-      expect(response, equals(fixtureTickers));
+      expect(response, equals(fixtureMarketsEntity));
     });
   });
 }

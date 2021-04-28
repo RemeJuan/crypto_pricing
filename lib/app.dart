@@ -45,7 +45,7 @@ class CryptoData extends HookWidget {
   }
 
   Widget _cryptoIcon(BuildContext context, String symbol) {
-    final url = 'https://cryptoicons.org/api/icon/${symbol.toLowerCase()}/25';
+    final url = 'https://icons.bitbot.tools/api/${symbol.toLowerCase()}/32x32';
 
     return OfflineImage(
       fileName: symbol.toLowerCase(),

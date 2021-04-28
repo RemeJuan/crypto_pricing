@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:crypto_pricing/core/network/network_manager.dart';
 import 'package:crypto_pricing/locator.dart';
 import 'package:crypto_pricing/providers/directory_provider.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -35,6 +36,9 @@ class OfflineImage extends HookWidget {
         final sp = watch(storagePathProvider);
         final assetPath = '${sp.data?.value}/icons/$fileName.png';
 
+        final imgUrl =
+            kDebugMode ? 'https://cors-anywhere.herokuapp.com/$url' : url;
+
         return Container(
           height: 25,
           width: 25,
@@ -44,8 +48,9 @@ class OfflineImage extends HookWidget {
                   key: const Key('IMAGE_FILE'),
                 )
               : Image.network(
-                  url,
+                  imgUrl,
                   key: const Key('IMAGE_NETWORK'),
+                  headers: getIt<NetworkManager>().apiHeaders,
                 ),
         );
       },
@@ -71,10 +76,8 @@ class OfflineImage extends HookWidget {
 
     final file = File('${_dir.path}/icons/$fileName.png');
 
-    final networkManager = getIt<NetworkManager>();
-
     try {
-      await networkManager.apiGetFile(url, file);
+      await getIt<NetworkManager>().apiGetFile(url, file);
     } catch (e) {
       rethrow;
     }

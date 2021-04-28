@@ -2,8 +2,8 @@ class EndpointBuilder {
   static Uri uri(String path, {Map<String, dynamic>? queryParameters}) {
     return Uri(
       scheme: 'https',
-      host: 'api.coinlore.net',
-      path: '/api/$path',
+      host: 'api.coingecko.com',
+      path: '/api/v3/$path',
       queryParameters: queryParameters,
     );
   }

@@ -55,6 +55,8 @@ class OfflineImage extends HookWidget {
   }
 
   Future<void> _hasToDownloadAssets(ValueNotifier<bool> hasLocalAsset) async {
+    if (kIsWeb) return;
+
     final _dir = await getApplicationDocumentsDirectory();
 
     final fn = '${_dir.path}/icons/$fileName.png';

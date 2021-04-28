@@ -1,4 +1,4 @@
-import 'package:crypto_pricing/domain/entities/tickers/tickers_data_entity.dart';
+import 'package:crypto_pricing/domain/entities/markets/market_entity.dart';
 import 'package:crypto_pricing/shared/widgets/offline_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class CryptoData extends HookWidget {
     return Center(
       child: Consumer(
         builder: (context, watch, child) {
-          final responseValue = watch(tickerResponseProvider);
+          final responseValue = watch(marketsResponseProvider);
 
           return responseValue.map(
             data: (data) => _buildList(context, data.value.data),
@@ -28,7 +28,7 @@ class CryptoData extends HookWidget {
 
   Widget _buildList(
     BuildContext context,
-    List<TickersDataEntity> data,
+    List<MarketEntity> data,
   ) {
     return ListView.builder(
       itemCount: data.length,
@@ -36,20 +36,20 @@ class CryptoData extends HookWidget {
         final item = data[index];
 
         return ListTile(
-          leading: _cryptoIcon(context, item.symbol),
+          leading: _cryptoIcon(context, item.image),
           title: Text(item.name),
-          trailing: Text('${item.priceUsd} USD'),
+          trailing: Text('${item.currentPrice} USD'),
         );
       },
     );
   }
 
-  Widget _cryptoIcon(BuildContext context, String symbol) {
-    final url = 'https://icons.bitbot.tools/api/${symbol.toLowerCase()}/32x32';
+  Widget _cryptoIcon(BuildContext context, String imageUrl) {
+    final fileName = imageUrl.split('/').last;
 
     return OfflineImage(
-      fileName: symbol.toLowerCase(),
-      url: url,
+      fileName: fileName,
+      url: imageUrl,
     );
   }
 }

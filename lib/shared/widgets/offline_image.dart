@@ -36,9 +36,6 @@ class OfflineImage extends HookWidget {
         final sp = watch(storagePathProvider);
         final assetPath = '${sp.data?.value}/icons/$fileName.png';
 
-        final imgUrl =
-            kDebugMode ? 'https://cors-anywhere.herokuapp.com/$url' : url;
-
         return Container(
           height: 25,
           width: 25,
@@ -48,7 +45,7 @@ class OfflineImage extends HookWidget {
                   key: const Key('IMAGE_FILE'),
                 )
               : Image.network(
-                  imgUrl,
+                  url,
                   key: const Key('IMAGE_NETWORK'),
                   headers: getIt<NetworkManager>().apiHeaders,
                 ),

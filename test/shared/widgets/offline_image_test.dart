@@ -26,6 +26,7 @@ void main() {
     when(mockNetworkManager.apiGetFile(any, any)).thenAnswer(
       (_) async => http.Response('', 200),
     );
+    when(mockNetworkManager.apiHeaders).thenReturn({});
   });
 
   testWidgets('should render Image.network', (tester) async {

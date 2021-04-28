@@ -31,7 +31,10 @@ void main() {
     test('should check if device is online', () async {
       //arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockClient.get(any, headers: anyNamed('headers'))).thenAnswer(
+      when(mockClient.get(
+        any,
+        headers: anyNamed('headers'),
+      )).thenAnswer(
         (_) async => http.Response(mockData, 200),
       );
       //act
@@ -47,19 +50,25 @@ void main() {
 
       test('should perform a GET request with provided URL', () async {
         //arrange
-        when(mockClient.get(any)).thenAnswer(
+        when(mockClient.get(
+          any,
+          headers: anyNamed('headers'),
+        )).thenAnswer(
           (_) async => http.Response(mockData, 200),
         );
         //act
         await networkManager.apiGet(mockUrl);
         //assert
-        verify(mockClient.get(mockUri));
+        verify(mockClient.get(mockUri, headers: networkManager.apiHeaders));
       });
 
       test('should throw [ServerException] when the response code != 200',
           () async {
         //arrange
-        when(mockClient.get(any)).thenAnswer(
+        when(mockClient.get(
+          any,
+          headers: anyNamed('headers'),
+        )).thenAnswer(
           (_) async => http.Response('Something happened', 404),
         ); //act
         final call = networkManager.apiGet;
@@ -87,7 +96,10 @@ void main() {
     test('should check if device is online', () async {
       //arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      when(mockClient.get(any)).thenAnswer(
+      when(mockClient.get(
+        any,
+        headers: anyNamed('headers'),
+      )).thenAnswer(
         (_) async => http.Response(mockData, 200),
       );
       //act
@@ -104,14 +116,17 @@ void main() {
       test('should perform a GET request with provided URL and headers',
           () async {
         //arrange
-        when(mockClient.get(any)).thenAnswer(
+        when(mockClient.get(
+          any,
+          headers: anyNamed('headers'),
+        )).thenAnswer(
           (_) async => http.Response(mockData, 200),
         );
         final file = File('$path/files/mock_file');
         //act
         await networkManager.apiGetFile(mockUrl, file);
         //assert
-        verify(mockClient.get(mockUri));
+        verify(mockClient.get(mockUri, headers: networkManager.apiHeaders));
       });
 
       test('should throw [ServerException] when the response code != 200',
@@ -119,6 +134,7 @@ void main() {
         //arrange
         when(mockClient.get(
           any,
+          headers: anyNamed('headers'),
         )).thenAnswer(
           (_) async => http.Response('Something happened', 404),
         );

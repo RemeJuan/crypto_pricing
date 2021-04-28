@@ -1,17 +1,16 @@
+import 'package:crypto_pricing/data/sources/markets/markets_remote_source.dart';
+import 'package:crypto_pricing/domain/entities/markets/markets_entity.dart';
 import 'package:crypto_pricing/locator.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../data/sources/tickers/tickers_remote_source.dart';
-import '../domain/entities/tickers/tickers_entity.dart';
-
-final Provider<TickersRemoteSource> tickerProvider = Provider(
-  (ref) => getIt<TickersRemoteSource>(),
+final Provider<MarketsRemoteSource> marketsProvider = Provider(
+  (ref) => getIt<MarketsRemoteSource>(),
 );
 
-final FutureProvider<TickersEntity> tickerResponseProvider =
-    FutureProvider<TickersEntity>(
+final FutureProvider<MarketsEntity> marketsResponseProvider =
+    FutureProvider<MarketsEntity>(
   (ref) async {
-    final tickerClient = ref.read(tickerProvider);
-    return tickerClient.getTickers();
+    final tickerClient = ref.read(marketsProvider);
+    return tickerClient.getMarkets();
   },
 );

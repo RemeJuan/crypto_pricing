@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
 
 import 'class_mocks/network_mocks.dart';
-import 'fixtures/tickers/fixture_tickers_entity.dart';
+import 'fixtures/markets/fixture_market_entity.dart';
 import 'test_helpers.dart';
 
 void main() {
@@ -27,12 +27,13 @@ void main() {
     when(mockNetworkManager.apiGetFile(any, any)).thenAnswer(
       (_) async => http.Response('', 200),
     );
+    when(mockNetworkManager.apiHeaders).thenReturn({});
   });
 
   testWidgets('CryptoApp: Loading', (tester) async {
     final widget = ProviderScope(
       overrides: [
-        tickerResponseProvider.overrideWithValue(
+        marketsResponseProvider.overrideWithValue(
           const AsyncValue.loading(),
         ),
       ],
@@ -47,11 +48,11 @@ void main() {
     );
   });
 
-  testWidgets('CryptoApp: SUccess', (tester) async {
+  testWidgets('CryptoApp: Success', (tester) async {
     final widget = ProviderScope(
       overrides: [
-        tickerResponseProvider.overrideWithValue(
-          const AsyncValue.data(fixtureTickers),
+        marketsResponseProvider.overrideWithValue(
+          const AsyncValue.data(fixtureMarketsEntity),
         ),
       ],
       child: CryptoApp(),
@@ -75,7 +76,7 @@ void main() {
 
     final widget = ProviderScope(
       overrides: [
-        tickerResponseProvider.overrideWithValue(
+        marketsResponseProvider.overrideWithValue(
           AsyncValue.error(errorMessage),
         ),
       ],

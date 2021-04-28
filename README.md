@@ -5,6 +5,6 @@
 
 A simple flutter project to test out [riverpod](https://pub.dev/packages/riverpod).
 
-[Link](https://crypto_pricing.codemagic.io)
+[Link](https://crypto_pricing.codemagic.app/)
 
 

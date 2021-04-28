@@ -4,6 +4,7 @@
 
 import 'dart:async' as _i8;
 import 'dart:convert' as _i9;
+import 'dart:io' as _i12;
 import 'dart:typed_data' as _i3;
 
 import 'package:crypto_pricing/core/network/network_info.dart' as _i6;
@@ -140,16 +141,17 @@ class MockNetworkManager extends _i1.Mock implements _i11.NetworkManager {
   _i5.Client get client => (super.noSuchMethod(Invocation.getter(#client),
       returnValue: _FakeClient()) as _i5.Client);
   @override
-  Map<String, String> get headers =>
-      (super.noSuchMethod(Invocation.getter(#headers),
-          returnValue: <String, String>{}) as Map<String, String>);
-  @override
   _i6.NetworkInfo get networkInfo =>
       (super.noSuchMethod(Invocation.getter(#networkInfo),
           returnValue: _FakeNetworkInfo()) as _i6.NetworkInfo);
   @override
   _i8.Future<_i2.Response> apiGet(String? url) =>
       (super.noSuchMethod(Invocation.method(#apiGet, [url]),
+              returnValue: Future<_i2.Response>.value(_FakeResponse()))
+          as _i8.Future<_i2.Response>);
+  @override
+  _i8.Future<_i2.Response> apiGetFile(String? url, _i12.File? file) =>
+      (super.noSuchMethod(Invocation.method(#apiGetFile, [url, file]),
               returnValue: Future<_i2.Response>.value(_FakeResponse()))
           as _i8.Future<_i2.Response>);
 }

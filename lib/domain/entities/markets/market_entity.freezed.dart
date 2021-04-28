@@ -28,9 +28,9 @@ class _$MarketEntityTearOff {
       @JsonKey(name: 'current_price')
           required num currentPrice,
       @JsonKey(name: 'market_cap')
-          required int marketCap,
+          required num marketCap,
       @JsonKey(name: 'market_cap_rank')
-          required int marketCapRank,
+          required num marketCapRank,
       @JsonKey(name: 'total_volume')
           required num totalVolume,
       @JsonKey(name: 'high_24h')
@@ -120,9 +120,9 @@ mixin _$MarketEntity {
   @JsonKey(name: 'current_price')
   num get currentPrice => throw _privateConstructorUsedError;
   @JsonKey(name: 'market_cap')
-  int get marketCap => throw _privateConstructorUsedError;
+  num get marketCap => throw _privateConstructorUsedError;
   @JsonKey(name: 'market_cap_rank')
-  int get marketCapRank => throw _privateConstructorUsedError;
+  num get marketCapRank => throw _privateConstructorUsedError;
   @JsonKey(name: 'total_volume')
   num get totalVolume => throw _privateConstructorUsedError;
   @JsonKey(name: 'high_24h')
@@ -186,9 +186,9 @@ abstract class $MarketEntityCopyWith<$Res> {
       @JsonKey(name: 'current_price')
           num currentPrice,
       @JsonKey(name: 'market_cap')
-          int marketCap,
+          num marketCap,
       @JsonKey(name: 'market_cap_rank')
-          int marketCapRank,
+          num marketCapRank,
       @JsonKey(name: 'total_volume')
           num totalVolume,
       @JsonKey(name: 'high_24h')
@@ -294,11 +294,11 @@ class _$MarketEntityCopyWithImpl<$Res> implements $MarketEntityCopyWith<$Res> {
       marketCap: marketCap == freezed
           ? _value.marketCap
           : marketCap // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       marketCapRank: marketCapRank == freezed
           ? _value.marketCapRank
           : marketCapRank // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       totalVolume: totalVolume == freezed
           ? _value.totalVolume
           : totalVolume // ignore: cast_nullable_to_non_nullable
@@ -405,9 +405,9 @@ abstract class _$MarketEntityCopyWith<$Res>
       @JsonKey(name: 'current_price')
           num currentPrice,
       @JsonKey(name: 'market_cap')
-          int marketCap,
+          num marketCap,
       @JsonKey(name: 'market_cap_rank')
-          int marketCapRank,
+          num marketCapRank,
       @JsonKey(name: 'total_volume')
           num totalVolume,
       @JsonKey(name: 'high_24h')
@@ -515,11 +515,11 @@ class __$MarketEntityCopyWithImpl<$Res> extends _$MarketEntityCopyWithImpl<$Res>
       marketCap: marketCap == freezed
           ? _value.marketCap
           : marketCap // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       marketCapRank: marketCapRank == freezed
           ? _value.marketCapRank
           : marketCapRank // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       totalVolume: totalVolume == freezed
           ? _value.totalVolume
           : totalVolume // ignore: cast_nullable_to_non_nullable
@@ -682,10 +682,10 @@ class _$_MarketEntity implements _MarketEntity {
   final num currentPrice;
   @override
   @JsonKey(name: 'market_cap')
-  final int marketCap;
+  final num marketCap;
   @override
   @JsonKey(name: 'market_cap_rank')
-  final int marketCapRank;
+  final num marketCapRank;
   @override
   @JsonKey(name: 'total_volume')
   final num totalVolume;
@@ -875,9 +875,9 @@ abstract class _MarketEntity implements MarketEntity {
       @JsonKey(name: 'current_price')
           required num currentPrice,
       @JsonKey(name: 'market_cap')
-          required int marketCap,
+          required num marketCap,
       @JsonKey(name: 'market_cap_rank')
-          required int marketCapRank,
+          required num marketCapRank,
       @JsonKey(name: 'total_volume')
           required num totalVolume,
       @JsonKey(name: 'high_24h')
@@ -935,10 +935,10 @@ abstract class _MarketEntity implements MarketEntity {
   num get currentPrice => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'market_cap')
-  int get marketCap => throw _privateConstructorUsedError;
+  num get marketCap => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'market_cap_rank')
-  int get marketCapRank => throw _privateConstructorUsedError;
+  num get marketCapRank => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'total_volume')
   num get totalVolume => throw _privateConstructorUsedError;

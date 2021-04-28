@@ -8,7 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'providers/app_provider.dart';
 
-class CryptoApp extends HookWidget {
+class CryptoData extends HookWidget {
   @override
   Widget build(context) {
     return Center(

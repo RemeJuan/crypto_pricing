@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(CryptoApp());
 }
 
-class MyApp extends StatelessWidget {
+class CryptoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Crypto Tracker'),
           ),
-          body: CryptoApp(),
+          body: CryptoData(),
         ),
       ),
     );

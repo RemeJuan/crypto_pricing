@@ -1,8 +1,11 @@
 import 'package:crypto_pricing/app.dart';
+import 'package:crypto_pricing/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
+  initServices();
+
   runApp(CryptoApp());
 }
 

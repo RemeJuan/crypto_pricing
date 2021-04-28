@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:crypto_pricing/locator.dart';
+import 'package:flutter/services.dart';
 
 class TestHelpers {
   static String fixture(String pathToFile) =>
@@ -12,6 +13,13 @@ class TestHelpers {
   }
 
   static Future<void> setupTest() async {
+    const channel = MethodChannel(
+      'plugins.flutter.io/path_provider',
+    );
+    channel.setMockMethodCallHandler((MethodCall methodCall) async {
+      return '${storagePath()}/files';
+    });
+
     // Setup the application services
     initServices();
     getIt.allowReassignment = true;

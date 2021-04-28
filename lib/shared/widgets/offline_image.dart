@@ -1,11 +1,9 @@
-import 'package:crypto_pricing/core/network/network_info.dart';
 import 'package:crypto_pricing/core/network/network_manager.dart';
+import 'package:crypto_pricing/locator.dart';
 import 'package:crypto_pricing/providers/directory_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:http/http.dart' as http;
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:universal_io/io.dart';
 
@@ -66,10 +64,7 @@ class OfflineImage extends HookWidget {
 
     final file = File('$_dir/icons/$fileName.png');
 
-    final networkManager = NetworkManager(
-      networkInfo: NetworkInfoImpl(InternetConnectionChecker()),
-      client: http.Client(),
-    );
+    final networkManager = getIt<NetworkManager>();
 
     try {
       await networkManager.apiGetFile(url, file);

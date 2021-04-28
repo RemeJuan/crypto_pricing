@@ -15,6 +15,7 @@ dependencies:
   hooks_riverpod: ^0.14.0+2
   flutter_cache_manager: ^3.0.1
   path_provider: ^2.0.1
+  get_it: ^6.1.1
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2

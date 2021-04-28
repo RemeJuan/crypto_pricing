@@ -1,0 +1,70 @@
+import 'package:crypto_pricing/domain/entities/markets/market_entity.dart';
+import 'package:crypto_pricing/domain/entities/markets/markets_entity.dart';
+
+const fixtureMarketsEntity = MarketsEntity(
+  [fixtureBtcData, fixtureEthData],
+);
+
+const fixtureBtcData = MarketEntity(
+  id: 'bitcoin',
+  symbol: 'btc',
+  name: 'Bitcoin',
+  image:
+      'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
+  currentPrice: 54738,
+  marketCap: 1021396697097,
+  marketCapRank: 1,
+  fullyDilutedValuation: 1147408054790,
+  totalVolume: 46847341232,
+  high24h: 55669,
+  low24h: 53988,
+  priceChange24h: -126.89582779,
+  priceChangePercentage24h: -0.23129,
+  marketCapChange24h: -5458454693.710815,
+  marketCapChangePercentage24h: -0.53157,
+  circulatingSupply: 18693725,
+  totalSupply: 21000000,
+  maxSupply: 21000000,
+  ath: 64805,
+  athChangePercentage: -15.6875,
+  athDate: '2021-04-14T11:54:46.763Z',
+  atl: 67.81,
+  atlChangePercentage: 80477.03078,
+  atlDate: '2013-07-06T00:00:00.000Z',
+  lastUpdated: '2021-04-28T16:43:20.950Z',
+  priceChangePercentage1hInCurrency: 0.736352113558968,
+  priceChangePercentage24hInCurrency: -0.23128659895024234,
+  priceChangePercentage7dInCurrency: -2.764799171350318,
+);
+
+const fixtureEthData = MarketEntity(
+  id: 'ethereum',
+  symbol: 'eth',
+  name: 'Ethereum',
+  image:
+      'https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880',
+  currentPrice: 2714.11,
+  marketCap: 313384842945,
+  marketCapRank: 2,
+  fullyDilutedValuation: null,
+  totalVolume: 39986997683,
+  high24h: 2735.41,
+  low24h: 2572.12,
+  priceChange24h: 62.68,
+  priceChangePercentage24h: 2.36388,
+  marketCapChange24h: 6463306153,
+  marketCapChangePercentage24h: 2.10585,
+  circulatingSupply: 115656200.624,
+  totalSupply: null,
+  maxSupply: null,
+  ath: 2735.41,
+  athChangePercentage: -0.94277,
+  athDate: '2021-04-28T12:23:45.285Z',
+  atl: 0.432979,
+  atlChangePercentage: 625710.19726,
+  atlDate: '2015-10-20T00:00:00.000Z',
+  lastUpdated: '2021-04-28T16:42:07.242Z',
+  priceChangePercentage1hInCurrency: 1.2627393775010416,
+  priceChangePercentage24hInCurrency: 2.3638780731457127,
+  priceChangePercentage7dInCurrency: 16.771848947560173,
+);

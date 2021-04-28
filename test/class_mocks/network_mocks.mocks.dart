@@ -145,6 +145,14 @@ class MockNetworkManager extends _i1.Mock implements _i11.NetworkManager {
       (super.noSuchMethod(Invocation.getter(#networkInfo),
           returnValue: _FakeNetworkInfo()) as _i6.NetworkInfo);
   @override
+  Map<String, String> get apiHeaders =>
+      (super.noSuchMethod(Invocation.getter(#apiHeaders),
+          returnValue: <String, String>{}) as Map<String, String>);
+  @override
+  set apiHeaders(Map<String, String>? _apiHeaders) =>
+      super.noSuchMethod(Invocation.setter(#apiHeaders, _apiHeaders),
+          returnValueForMissingStub: null);
+  @override
   _i8.Future<_i2.Response> apiGet(String? url) =>
       (super.noSuchMethod(Invocation.method(#apiGet, [url]),
               returnValue: Future<_i2.Response>.value(_FakeResponse()))

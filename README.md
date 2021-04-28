@@ -1,16 +1,10 @@
-# crypto_pricing
+# Crypto Pricing
 
-A new Flutter project.
+[![codecov](https://codecov.io/gh/RemeJuan/crypto_pricing/branch/master/graph/badge.svg)](https://codecov.io/gh/RemeJuan/crypto_pricing)
+[![Codemagic build status](https://api.codemagic.io/apps/608948d394535b1d269816a6/608948d394535b1d269816a5/status_badge.svg)](https://codemagic.io/apps/608948d394535b1d269816a6/608948d394535b1d269816a5/latest_build)
 
-## Getting Started
+A simple flutter project to test out [riverpod](https://pub.dev/packages/riverpod).
 
-This project is a starting point for a Flutter application.
+[Link](crypto_pricing.codemagic.io)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

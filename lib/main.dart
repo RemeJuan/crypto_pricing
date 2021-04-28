@@ -14,13 +14,13 @@ class CryptoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
-        title: 'Cryto Tracker',
+        title: 'Cryto Pricing',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Crypto Tracker'),
+            title: const Text('Crypto Pricing'),
           ),
           body: CryptoData(),
         ),

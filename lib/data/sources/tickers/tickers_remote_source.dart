@@ -19,7 +19,10 @@ class TickersRemoteSourceImpl implements TickersRemoteSource {
 
   @override
   Future<TickersEntity> getTickers() async {
-    final url = EndpointBuilder.url(_path);
+    final url = EndpointBuilder.url(
+      _path,
+      queryParameters: <String, dynamic>{'limit': '20'},
+    );
 
     final response = await networkManager.apiGet(url);
     final decoded = jsonDecode(response.body) as Map<String, dynamic>;

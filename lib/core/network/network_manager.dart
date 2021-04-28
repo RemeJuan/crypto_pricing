@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart' as foundation;
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import 'network_info.dart';
@@ -16,7 +15,7 @@ class NetworkManager {
   });
 
   Map<String, String> apiHeaders = {
-    'Origin': 'crypto_tracking.codemagic.app',
+    'Origin': 'crypto_pricing.codemagic.app',
     'Access-Control-Allow-Origin': '*',
   };
 
@@ -27,11 +26,7 @@ class NetworkManager {
       if (!connected) throw const SocketException('Offline');
     }
 
-    final uri = kDebugMode
-        ? Uri.parse('https://cors-anywhere.herokuapp.com/$url')
-        : Uri.parse(url);
-
-    final response = await client.get(uri, headers: apiHeaders);
+    final response = await client.get(Uri.parse(url), headers: apiHeaders);
 
     foundation.debugPrint('$url - GET ${response.statusCode}');
 
@@ -48,11 +43,7 @@ class NetworkManager {
     if (!connected) throw const SocketException('Offline');
 
     try {
-      final uri = kDebugMode
-          ? Uri.parse('https://cors-anywhere.herokuapp.com/$url')
-          : Uri.parse(url);
-
-      final response = await client.get(uri, headers: apiHeaders);
+      final response = await client.get(Uri.parse(url), headers: apiHeaders);
 
       foundation.debugPrint('$url, ${response.statusCode}');
 

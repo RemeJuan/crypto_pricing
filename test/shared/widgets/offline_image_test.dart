@@ -1,9 +1,12 @@
 import 'package:crypto_pricing/core/network/network_manager.dart';
 import 'package:crypto_pricing/locator.dart';
+import 'package:crypto_pricing/providers/directory_provider.dart';
 import 'package:crypto_pricing/shared/widgets/offline_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:http/http.dart' as http;
+import 'package:mockito/mockito.dart';
 
 import '../../class_mocks/network_mocks.dart';
 import '../../test_helpers.dart';
@@ -19,6 +22,10 @@ void main() {
     mockNetworkManager = MockNetworkManager();
 
     getIt.registerSingleton<NetworkManager>(mockNetworkManager);
+
+    when(mockNetworkManager.apiGetFile(any, any)).thenAnswer(
+      (_) async => http.Response('', 200),
+    );
   });
 
   testWidgets('should render Image.network', (tester) async {
@@ -38,10 +45,17 @@ void main() {
   });
 
   testWidgets('should render Image.file', (tester) async {
+    final path = TestHelpers.storagePath();
+
     final widget = ProviderScope(
+      overrides: [
+        storagePathProvider.overrideWithValue(
+          AsyncValue.data('$path/files'),
+        ),
+      ],
       child: OfflineImage(
         url: 'https://mock.url/mock_image.png',
-        fileName: '',
+        fileName: 'mock_image',
       ),
     );
 

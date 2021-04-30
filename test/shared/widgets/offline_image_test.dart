@@ -47,7 +47,7 @@ void main() {
 
   testWidgets('should render Image.file', (tester) async {
     final path = TestHelpers.storagePath();
-
+    print('path in test: $path');
     final widget = ProviderScope(
       overrides: [
         storagePathProvider.overrideWithValue(

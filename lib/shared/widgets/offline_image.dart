@@ -58,7 +58,7 @@ class OfflineImage extends HookWidget {
     if (kIsWeb) return;
 
     final _dir = await getApplicationDocumentsDirectory();
-
+    print('_hasToDownloadAssets $_dir');
     final fn = '${_dir.path}/icons/$fileName.png';
 
     final file = File(fn);

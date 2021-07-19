@@ -27,3 +27,5 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
           build_dir: build/web
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}

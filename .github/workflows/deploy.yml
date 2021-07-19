@@ -1,0 +1,33 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Dart
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Flutter action
+        uses: subosito/flutter-action@v1.5.3
+
+      - name: Install dependencies
+        run: flutter pub get
+        
+      - name: Build Web
+        run: flutter build web --web-renderer html
+        
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v2.5.0
+        with:
+          build_dir: build/web
